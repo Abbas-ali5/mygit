@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4  
+        uses: actions/checkout@v4  # ✅ latest stable version
 
       - name: Upload static files
-        uses: actions/upload-pages-artifact@v2  
+        uses: actions/upload-pages-artifact@v2  # ✅ UPDATED from v1 to v2
         with:
-          path: .
+          path: .  # The folder containing index.html
 
   deploy:
     needs: build
@@ -34,4 +34,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2  
+        uses: actions/deploy-pages@v2  # ✅ UPDATED from v1 to v2
